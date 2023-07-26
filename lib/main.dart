@@ -1,34 +1,22 @@
+import 'package:flutter_application_1/main.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Container.dart';
-import 'package:flutter_application_1/alinment.dart';
-import 'package:flutter_application_1/sinin.dart';
 
-import 'increment.dart';
-
-void main() {
+void main(){
   runApp(MyApp());
 }
-
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
-     // home: Sinin(),
-    // home:increment(),
-   // home: Types_Container(),
-   home: Types_Alinment(),
+
+
     );
   }
 }
-/*
-
-data 1=>2 : Sinin()
-increment : increment(),
-container types : Types_Container(),
-
-
-
-
-*/
