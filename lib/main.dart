@@ -1,6 +1,8 @@
 import 'package:flutter_application_1/main.dart';
 import 'package:flutter/material.dart';
 
+import 'k_screens/hiddendrawer_screens/hiden_drawer.dart';
+
 void main(){
   runApp(MyApp());
 }
@@ -15,8 +17,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
-
+home: Hiddendrawer(),
     );
   }
 }
