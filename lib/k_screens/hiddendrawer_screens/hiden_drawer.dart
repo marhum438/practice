@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/k_screens/hiddendrawer_screens/pages/home_page.dart';
+import 'package:flutter_application_1/k_screens/hiddendrawer_screens/pages/setting.dart';
 import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
 import 'package:hidden_drawer_menu/model/item_hidden_menu.dart';
 import 'package:hidden_drawer_menu/model/screen_hidden_drawer.dart';
-import 'package:project2/k_screens/hiddendrawer_screens/pages/home_page.dart';
-import 'package:project2/k_screens/hiddendrawer_screens/pages/setting.dart';
+
 
 class Hiddendrawer extends StatefulWidget {
   const Hiddendrawer({super.key});
