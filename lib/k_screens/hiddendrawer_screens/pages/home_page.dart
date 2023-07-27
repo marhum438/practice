@@ -13,10 +13,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 206, 206, 206),
+      backgroundColor: Color.fromARGB(255, 255, 253, 253),
       drawer: Hiddendrawer(),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 50.0, vertical: 25),
+        padding: EdgeInsets.symmetric(horizontal: 35.0, vertical: 25),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
               height: 40,
               width: double.infinity,
               decoration: BoxDecoration(
-                color:  Color.fromARGB(255, 206, 206, 206),
+                  color: Color.fromARGB(255, 255, 253, 253),
                   borderRadius: BorderRadius.circular(20),
                   boxShadow: [
                     BoxShadow(
@@ -58,14 +58,8 @@ class _HomePageState extends State<HomePage> {
                         offset: Offset(4.0, 4.0),
                         blurRadius: 5.0,
                         spreadRadius: 0.5),
-                    BoxShadow(
-                        color: Colors.white,
-                        offset: Offset(-4.0, -4.0),
-                        blurRadius: 5.0,
-                        spreadRadius: 1.0)
                   ],
-                //  border: Border.all(width: 2, color: Colors.yellow)
-                  ),
+                  border: Border.all(width: 0.3, color: Colors.black)),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 9.0),
                 child: Row(
@@ -84,9 +78,78 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: 30,
             ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  stack("Pizza", Colors.yellow),
+                  stack("Burger", Color.fromARGB(255, 255, 253, 253)),
+                  stack("ice-cream", Color.fromARGB(255, 255, 253, 253)),
+                  stack("Donet", Color.fromARGB(255, 255, 253, 253)),
+                 
+                 
+                  stack("Burger", Color.fromARGB(255, 255, 253, 253)),
+                  stack("ice-cream", Color.fromARGB(255, 255, 253, 253)),
+                  stack("Donet", Color.fromARGB(255, 255, 253, 253)),
+                ],
+              ),
+            ),
           ],
         ),
       ),
     );
   }
+}
+
+Widget stack(var text, var color) {
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Stack(
+      children: [
+        Container(
+          height: 120,
+          width: 75,
+          decoration: BoxDecoration(
+              border: Border.all(width: 0.3, color: Colors.black),
+              borderRadius: BorderRadius.circular(50),
+              color: color,
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.grey.shade500,
+                    offset: Offset(3.0, 3.0),
+                    blurRadius: 5.0,
+                    spreadRadius: 0.5),
+              ]),
+        ),
+        Positioned(
+          top: 5,
+          //bottom: 9,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                height: 60,
+                width: 75,
+                decoration: BoxDecoration(
+                    border: Border.all(width: 0.3, color: Colors.black),
+                    shape: BoxShape.circle,
+                    color: Color.fromARGB(255, 255, 253, 253),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey.shade500,
+                          offset: Offset(2.0, 2.0),
+                          blurRadius: 8.0,
+                          spreadRadius: 0.2),
+                    ]),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Text(text)
+            ],
+          ),
+        ),
+      ],
+    ),
+  );
 }

@@ -17,7 +17,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(canvasColor: Color.fromARGB(255, 206, 206, 206),),
+      theme: ThemeData(canvasColor: Color.fromARGB(255, 255, 253, 253),),
 home: Hiddendrawer(),
     );
   }
