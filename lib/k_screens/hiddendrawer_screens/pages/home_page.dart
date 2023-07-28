@@ -103,7 +103,10 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 height: 25,
               ),
-              Text("Featured Restaurants", style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900),),
+              Text(
+                "Featured Restaurants",
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900),
+              ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Padding(
@@ -128,20 +131,35 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 height: 25,
               ),
-              Text("Recommended for you", style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900),),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(children: [
-           box1("Salad","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY6con68myXe70VXhpyrBY6xTkZtj8FAGSZkDFcjAlqA&s" ,"Healthy dish","\$59.00")
-        , box1("Salad","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY6con68myXe70VXhpyrBY6xTkZtj8FAGSZkDFcjAlqA&s" ,"Healthy dish","\$59.00")
-        , box1("Salad","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY6con68myXe70VXhpyrBY6xTkZtj8FAGSZkDFcjAlqA&s" ,"Healthy dish","\$59.00")
-        , 
-         
-          ],),
-        ),
-        SizedBox(
-          height: 45,
-        )
+              Text(
+                "Recommended for you",
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900),
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    box1(
+                        "Salad",
+                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY6con68myXe70VXhpyrBY6xTkZtj8FAGSZkDFcjAlqA&s",
+                        "Healthy dish",
+                        "\$59.00"),
+                    box1(
+                        "Salad",
+                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY6con68myXe70VXhpyrBY6xTkZtj8FAGSZkDFcjAlqA&s",
+                        "Healthy dish",
+                        "\$59.00"),
+                    box1(
+                        "Salad",
+                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY6con68myXe70VXhpyrBY6xTkZtj8FAGSZkDFcjAlqA&s",
+                        "Healthy dish",
+                        "\$59.00"),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 45,
+              )
             ],
           ),
         ),
@@ -198,7 +216,7 @@ Widget box(
   var image,
 ) {
   return Padding(
-    padding: const EdgeInsets.only(right:15.0),
+    padding: const EdgeInsets.only(right: 15.0),
     child: Container(
       height: 200,
       width: 180,
@@ -206,15 +224,14 @@ Widget box(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
-              borderRadius: BorderRadius.circular(15),
-             
-                child: Image.network(
-                  image,
-                  fit: BoxFit.fill,
-                  width: 180,
-                  height: 100,
-                ),
-              ),
+            borderRadius: BorderRadius.circular(15),
+            child: Image.network(
+              image,
+              fit: BoxFit.fill,
+              width: 180,
+              height: 100,
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 14),
             child: Text(
@@ -254,6 +271,7 @@ Widget box(
     ),
   );
 }
+
 Widget box1(
   var text,
   var image,
@@ -261,56 +279,79 @@ Widget box1(
   var Rs,
 ) {
   return Padding(
-    padding: const EdgeInsets.only(right:15.0),
+    padding: const EdgeInsets.only(right: 15.0,top: 6),
     child: Container(
       height: 120,
       width: 280,
-       child: Row(children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal:8.0),
-          child: CircleAvatar(
-            radius: 35,
-            foregroundImage:NetworkImage(image)
+      child: Row(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child:
+                CircleAvatar(radius: 35, foregroundImage: NetworkImage(image)),
           ),
-        ),
-Column(
-  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-  crossAxisAlignment: CrossAxisAlignment.start,
-  children: [
-  Text(text, style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900),),
-  Text(text1, style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),),
-Row(children: [
-  Text(Rs,style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500,color: Colors.green),),
-  Padding(
-    padding: const EdgeInsets.symmetric(horizontal:18.0),
-    child: InkWell(
-      child: Container(
-        height: 40,
-        width: 100,
-        child: Center(child: Text("Buy",style: TextStyle(fontSize: 23, fontWeight: FontWeight.w500,color: Colors.white),)),
-         decoration: BoxDecoration(
-              border: Border.all(width: 0.3, color: Colors.black),
-              borderRadius: BorderRadius.circular(35),
-              color: Colors.yellow,
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.grey.shade500,
-                    offset: Offset(3.0, 3.0),
-                    blurRadius: 5.0,
-                    spreadRadius: 0.5),
-              ]),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                text,
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900),
+              ),
+              Text(
+                text1,
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+              ),
+              Row(
+                children: [
+                  Text(
+                    Rs,
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.green),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                    child: InkWell(
+                      child: Container(
+                        height: 40,
+                        width: 100,
+                        child: Center(
+                            child: Text(
+                          "Buy",
+                          style: TextStyle(
+                              fontSize: 23,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white),
+                        )),
+                        decoration: BoxDecoration(
+                            border: Border.all(width: 0.3, color: Colors.black),
+                            borderRadius: BorderRadius.circular(35),
+                            color: Colors.yellow,
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.grey.shade500,
+                                  offset: Offset(3.0, 3.0),
+                                  blurRadius: 5.0,
+                                  spreadRadius: 0.5),
+                            ]),
+                      ),
+                    ),
+                  )
+                ],
+              )
+            ],
+          )
+        ],
       ),
-    ),
-  )
-],)
-],)
-
-
-
-       ],),
-        decoration: BoxDecoration(
+      decoration: BoxDecoration(
           border: Border.all(width: 0.3, color: Colors.black),
-          borderRadius: BorderRadius.only(topLeft: Radius.circular(70),bottomLeft:Radius.circular(70),topRight: Radius.circular(15),bottomRight: Radius.circular(15) ),
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(70),
+              bottomLeft: Radius.circular(70),
+              topRight: Radius.circular(15),
+              bottomRight: Radius.circular(15)),
           color: Color.fromARGB(255, 255, 253, 253),
           boxShadow: [
             BoxShadow(
@@ -319,6 +360,6 @@ Row(children: [
                 blurRadius: 5.0,
                 spreadRadius: 0.5),
           ]),
-          ),
+    ),
   );
 }
